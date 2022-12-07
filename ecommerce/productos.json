@@ -1,0 +1,89 @@
+[{
+  "_id": {
+    "$oid": "63911b059cf265d864ee6ad6"
+  },
+  "nombre": "Las Cosas Que Perdimos En El Fuego - Mariana Enriquez",
+  "descripcion": "Libro - Ficción",
+  "timestamp": 1670453443,
+  "codigo": "libro4",
+  "precio": 1280,
+  "foto": "urlimage",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "63911b059cf265d864ee6ad7"
+  },
+  "nombre": "En el estanque - Alvares Al",
+  "descripcion": "Libro - Ficción",
+  "timestamp": 1670453444,
+  "codigo": "libro5",
+  "precio": 1700,
+  "foto": "urlimage",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "63911b059cf265d864ee6ad8"
+  },
+  "nombre": "El juguete rabioso - Roberto Arlt",
+  "descripcion": "Libro - Ficción",
+  "timestamp": 1670453448,
+  "codigo": "libro6",
+  "precio": 2300,
+  "foto": "urlimage",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "63911b059cf265d864ee6ad9"
+  },
+  "nombre": "El diseño del mundo - Franco Pellegrini",
+  "descripcion": "Libro - Ficción",
+  "timestamp": 1670453748,
+  "codigo": "libro7",
+  "precio": 2860,
+  "foto": "urlimage",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "63911b059cf265d864ee6ada"
+  },
+  "nombre": "Entrevistas de ultratumba - Dan Crowe",
+  "descripcion": "Libro - Ficción",
+  "timestamp": 1670453754,
+  "codigo": "libro8",
+  "precio": 3350,
+  "foto": "urlimage",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "63911b059cf265d864ee6adb"
+  },
+  "nombre": "El acto de leer - Wolfgang Iser",
+  "descripcion": "Libro - Ficción",
+  "timestamp": 1670453812,
+  "codigo": "libro9",
+  "precio": 4320,
+  "foto": "urlimage",
+  "stock": 0
+},{
+  "_id": {
+    "$oid": "63911b059cf265d864ee6adc"
+  },
+  "nombre": "Muchas Vidas , Muchos Maestros - Brian Weiss",
+  "descripcion": "Libro - Ficción",
+  "timestamp": 1670453922,
+  "codigo": "libro10",
+  "precio": 4990,
+  "foto": "urlimage",
+  "stock": 0
+},{
+  "_id": {
+    "$oid": "63911d8f9cf265d864ee6ae7"
+  },
+  "nombre": "Breve historia del arte - Susie Hodge",
+  "descripcion": "Libro - Ficción",
+  "timestamp": 1670457462,
+  "codigo": "libro11",
+  "precio": 4990,
+  "foto": "urlimage",
+  "stock": 0
+}]

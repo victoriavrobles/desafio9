@@ -1,0 +1,193 @@
+//Crear db
+use ecommerce;
+
+//Crear collection
+db.createCollection('productos');
+db.createCollection('mensajes');
+
+//Insertar productos
+db.productos.insertMany([
+// Insertar productos
+{
+    "nombre": "Violeta - Isabel Allende",
+    "descripcion": "Libro - Ficción",
+    "timestamp": 1670452952,
+    "codigo": "libro1",
+    "precio": 120,
+    "foto": "urlimage"
+  },
+  {
+    "nombre": "Personas decentes - Leonardo Padura",
+    "descripcion": "Libro - Ficción",
+    "timestamp": 1670453252,
+    "codigo": "libro2",
+    "precio": 580,
+    "foto": "urlimage"
+  },
+  {
+    "nombre": "El diseño del mundo - Franco Pellegrini",
+    "descripcion": "Libro - Ficción",
+    "timestamp": 1670453432,
+    "codigo": "libro3",
+    "precio": 900,
+    "foto": "urlimage"
+  },
+ {
+    "nombre": "Las Cosas Que Perdimos En El Fuego - Mariana Enriquez",
+    "descripcion": "Libro - Ficción",
+    "timestamp": 1670453443,
+    "codigo": "libro4",
+    "precio": 1280,
+    "foto": "urlimage"
+  },
+ {
+    "nombre": "En el estanque - Alvares Al",
+    "descripcion": "Libro - Ficción",
+    "timestamp": 1670453444,
+    "codigo": "libro5",
+    "precio": 1700,
+    "foto": "urlimage"
+  },
+ {
+    "nombre": "El juguete rabioso - Roberto Arlt",
+    "descripcion": "Libro - Ficción",
+    "timestamp": 1670453448,
+    "codigo": "libro6",
+    "precio": 2300,
+    "foto": "urlimage"
+  },
+ {
+    "nombre": "El diseño del mundo - Franco Pellegrini",
+    "descripcion": "Libro - Ficción",
+    "timestamp": 1670453748,
+    "codigo": "libro7",
+    "precio": 2860,
+    "foto": "urlimage"
+  },
+ {
+    "nombre": "Entrevistas de ultratumba - Dan Crowe",
+    "descripcion": "Libro - Ficción",
+    "timestamp": 1670453754,
+    "codigo": "libro8",
+    "precio": 3350,
+    "foto": "urlimage"
+  },
+ {
+    "nombre": "El acto de leer - Wolfgang Iser",
+    "descripcion": "Libro - Ficción",
+    "timestamp": 1670453812,
+    "codigo": "libro9",
+    "precio": 4320,
+    "foto": "urlimage"
+  },
+ {
+    "nombre": "Muchas Vidas , Muchos Maestros - Brian Weiss",
+    "descripcion": "Libro - Ficción",
+    "timestamp": 1670453922,
+    "codigo": "libro10",
+    "precio": 4990,
+    "foto": "urlimage"
+  },
+])
+
+// Insertar mensajes
+db.mensajes.insertMany([
+{
+        "timestamp": 1670453922,
+        "email": "victoria@gmail.com",
+        "message": "Inserte un mensaje aqui"
+    },
+{
+        "timestamp": 1670453922,
+        "email": "victoria@gmail.com",
+        "message": "Inserte un mensaje aqui"
+    },
+{
+        "timestamp": 1670453922,
+        "email": "victoria@gmail.com",
+        "message": "Inserte un mensaje aqui"
+    },
+{
+        "timestamp": 1670453922,
+        "email": "victoria@gmail.com",
+        "message": "Inserte un mensaje aqui"
+    },
+{
+        "timestamp": 1670453922,
+        "email": "victoria@gmail.com",
+        "message": "Inserte un mensaje aqui"
+    },
+{
+        "timestamp": 1670453922,
+        "email": "victoria@gmail.com",
+        "message": "Inserte un mensaje aqui"
+    },
+{
+        "timestamp": 1670453922,
+        "email": "victoria@gmail.com",
+        "message": "Inserte un mensaje aqui"
+    },
+{
+        "timestamp": 1670453922,
+        "email": "victoria@gmail.com",
+        "message": "Inserte un mensaje aqui"
+    },
+{
+        "timestamp": 1670453922,
+        "email": "victoria@gmail.com",
+        "message": "Inserte un mensaje aqui"
+    },
+{
+        "timestamp": 1670453922,
+        "email": "victoria@gmail.com",
+        "message": "Inserte un mensaje aqui"
+    },
+])
+
+
+//Listar todos los documentos de cada colección
+db.productos.find();
+db.mensajes.find();
+
+//Mostrar la cantidad de documentos en cada colección
+db.productos.countDocuments();
+db.mensajes.countDocuments();
+
+//Agregar un producto en la coleccion "productos"
+db.productos.insertOne({
+    "nombre": "Breve historia del arte - Susie Hodge",
+    "descripcion": "Libro - Ficción",
+    "timestamp": 1670457462,
+    "codigo": "libro11",
+    "precio": 4990,
+    "foto": "urlimage"
+  });
+
+//Consulta producto especifico
+db.productos.find({nombre: "El juguete rabioso - Roberto Arlt"});
+
+//Listar los productos con precio menor a 1000
+db.productos.find({precio: {$lt: 1000}});
+
+//productos con precio entre los 1000 a 3000
+db.productos.find({precio: {$in: [1000, 3000]}});
+
+//Productos con precio mayor a 3000
+db.productos.find({precio: {$gt: 3000}});
+
+//Realizar una consulta que traiga solo el nombre del tercer productos mas barato
+db.productos.find().sort({precio: 1}).skip(2).limit(1);
+
+
+//Hacer una actualizacion sobre todos los productos, agregando el campo stock a todos ellos con un valor de 100
+db.productos.updateMany({}, {$inc: {stock: 100}});
+
+//Cambiar el stock a cero de los productos con precios mayores a 4000
+db.productos.updateMany({precio: {$gt: 4000}}, {$set: {stock: 0}});
+
+//Borrar los productos con un precio menor a 1000
+db.productos.deleteMany({precio: {$lt: 1000}});
+
+
+//Crear un usuario 'pepe' clave: 'asd456' que solo pueda leer la base de datos ecommerce
+db.createUser({user: "pepe", pwd: "asd456", roles: [{role: "read", db: "ecommerce"}]});
